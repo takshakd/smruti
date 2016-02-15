@@ -1,0 +1,37 @@
+body {
+  min-height: 2000px;
+  padding-top: 50px;
+}
+
+textarea {
+    width: 100%;
+}
+
+.tab-pane {
+  padding-top: 50px;
+}
+
+.formSentence {
+    padding: 5px;
+}
+
+.sentenceInput {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #000000;
+}
+
+.sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0px;
+    left: 0px;
+    z-index: 1000;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.input-group {
+    padding: 5px;
+}
