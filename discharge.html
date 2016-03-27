@@ -1,27 +1,77 @@
-<html>
-  <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <style>
-      table tr td {
-        padding: 5px;
-      }
-      .right {
-        text-align: right;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="jumbotron">
-        <h2>Discharge Summary</h2>
-        <table>
-          <tr><td>Name of patient</td><td class="right">Admitted:</td></tr>
-          <tr><td>Male/Female, Age</td><td class="right">Operated:</td></tr>
-          <tr><td>Address</td><td class="right">Discharged:</td></tr>
-        </table>
-        <h3>Diagnosis</h3>
-        <h3>Treatment</h3>
+<div class="container" id="dischargeSummary">
+  <h2>Discharge Summary</h2>
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-9">
+      <div class="input-group">
+        <span class="input-group-addon">First Name</span>
+        <input type="text" class="form-control" ng-bind="firstName" placeholder="First name">
+        <span class="input-group-addon">Last Name</span>
+        <input type="text" class="form-control" ng-bind="lastName" placeholder="Last name">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">Gender</span>
+        <input type="text" class="form-control" ng-bind="gender" placeholder="Gender">
+        <span class="input-group-addon">Age</span>
+        <input type="number" class="form-control" ng-bind="age" placeholder="Age">
+      </div>
+
+      <div class="input-group">
+        <span class="input-group-addon">Date Admitted</span>
+        <input type="date" class="form-control">
+        <span class="input-group-addon">Time</span>
+        <input type="time" class="form-control">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">Date Operated</span>
+        <input type="date" class="form-control">
+        <span class="input-group-addon">Time</span>
+        <input type="time" class="form-control">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">Date Discharged</span>
+        <input type="date" class="form-control">
+        <span class="input-group-addon">Time</span>
+        <input type="time" class="form-control">
       </div>
     </div>
-  </body>
-</html>
+    <div class="col-md-1">
+    </div>
+  </div>
+
+  <div class="row">
+    <div>
+      <p>Diagnosis:</p>
+      <textarea rows=2></textarea>
+    </div>
+    <div>
+      <p>Treatment:</p>
+      <textarea rows=5></textarea>
+    </div>
+    <div>
+      <p>Advice at discharge:</p>
+      <ul>
+        <li>Rest and elevation of the operated/injured limb.</li>
+        <li>Medicines
+          <input type="text" class="sentenceInput" ng-model="prescribedMedicines"></input>
+          as prescribed.</li>
+        <li>Report to Dr. Desai for any fever, increase in pain, swelling, and discharge at operative site.</li>
+        <li>
+          Use <input type="text" class="sentenceInput" ng-model="reommendedSupport"></input> support at home.
+        </li>
+        <li>Continue exercises for <input type="text" class="sentenceInput" ng-model="exercisePeriod"> as taught.</li>
+      </ul>
+      <p>Review again after one week.</p>
+      <br/><br/><br/>
+      <div>
+        <div class="col-md-6">
+          Dated: <span></span>
+        </div>
+        <div class="col-md-6">
+          Dr. K. Desai
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

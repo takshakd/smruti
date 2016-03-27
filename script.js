@@ -8,7 +8,7 @@
 
 var smruti = angular.module('smruti', []);
 
-smruti.controller('smrutiController', function($scope) {
+smruti.controller('smrutiController', function ($scope) {
   $scope.date = Date();
   $scope.namePrefix = "Mr.";
   $scope.genderPronoun = "he";
@@ -21,7 +21,7 @@ smruti.controller('smrutiController', function($scope) {
   $scope.adviceOrExpectation = "advice";
   $scope.leaveFrom = "ADL";
 
-  $scope.genderChange = function() {
+  $scope.genderChange = function () {
     if ($scope.namePrefix === "Mr.") {
       $scope.genderPronoun = "He";
       $scope.heSheUpper = "He";
@@ -37,7 +37,7 @@ smruti.controller('smrutiController', function($scope) {
     }
   };
 
-  $scope.generateCertificate = function() {
+  $scope.generateCertificate = function () {
     var printingWindow = window.open("", "_blank");
     //printingWindow.document.write("<p>" + $scope.date + "</p>");
     printingWindow.document.write("<html><head><title>Certificate</title></head>");
@@ -61,54 +61,8 @@ var dischargeDate = $("input-date-disc");
 // Outputs
 var outputElementSelector = "#section-output > h2";
 
-$(document).ready(function() {
-  $(".navbar-nav a").click(function() {
-    $(this).tab('show');
-    populateCurrentDate();
-  });
+$(document).ready(function () {
+  $("#certificate").load("./certificate.html");
+  $("#discharge").load("./discharge.html");
+  $("#bill").load("./bill.html");
 });
-
-function populateCurrentDate() {
-
-}
-
-function getFirstName() {
-  return $("#input-firstname").val();
-}
-
-function getLastName() {
-  return $("#input-lastname").val();
-}
-
-function getAdmitDate() {
-
-}
-
-function getDischargeDate() {
-
-}
-
-function getBillText() {
-  return "Bill for " + getFirstName() + " " + getLastName() +
-    " admitted on " + getAdmitDate() + " and discharged on " + getDischargeDate() + ".";
-}
-
-function getCertificateText() {
-  return "Certificate for " + getFirstName() + " " + getLastName() + ".";
-}
-
-function getDischargeSummaryText() {
-  return 'Discharge summary for <span ng-bind="firstName"></span> <span ng-bind="lastName"></span>.';
-}
-
-function generateBill() {
-  $(outputElementSelector).html(getBillText());
-}
-
-function generateCertificate() {
-  $(outputElementSelector).html(getCertificateText());
-}
-
-function generateDischargeSummary() {
-  $(outputElementSelector).html(getDischargeSummaryText());
-}

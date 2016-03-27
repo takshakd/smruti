@@ -1,40 +1,22 @@
 body {
-  padding-top: 70px;
-}
-
-textarea {
-    width: 100%;
-}
-
-.tab-content {
-
-}
-
-.tab-pane {
-  border: 1px solid black;
+  padding: 40px;
 }
 
 .formSentence {
-    padding: 5px;
+  padding: 5px;
 }
 
 .sentenceInput {
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 1px solid #000000;
-}
-
-.sidebar {
-    position: fixed;
-    top: 51px;
-    bottom: 0px;
-    left: 0px;
-    z-index: 1000;
-    padding: 20px;
-    background-color: #f5f5f5;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #000000;
 }
 
 .input-group {
-    padding: 5px;
+  padding: 5px;
+}
+
+.nav .active {
+  background: #FFF;
 }

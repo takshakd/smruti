@@ -12,221 +12,31 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="./script.js"></script>
 </head>
 
 <body ng-controller="smrutiController">
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-brand">
-        Smruti
+
+  <nav class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Smruti</a>
       </div>
-      <div>
-        <ul class="nav navbar-nav">
-          <li><a href="#discharge">Discharge</a></li>
-          <li class="active"><a href="#certificate">Certificate</a></li>
-          <li><a href="#bill">Bill</a></li>
-        </ul>
-      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#certificate" data-toggle="tab">Certificate</a></li>
+        <li><a href="#discharge" data-toggle="tab">Discharge</a></li>
+        <li><a href="#bill" data-toggle="tab">Bill</a></li>
+      </ul>
     </div>
   </nav>
 
-  <div class="container">
-    <div class="row">
-      <div class="main">
-          <div>
-            <div class="tab-content">
-              <div class="tab-pane jumbotron" id="discharge">
-                <div id="dischargeSummary">
-                  <div class="row">
-                    <h2>Discharge Summary</h2>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-1">
-                    </div>
-                    <div class="col-md-9">
-                      <div class="input-group">
-                        <span class="input-group-addon">First Name</span>
-                        <input type="text" class="form-control" ng-bind="firstName" placeholder="First name">
-                        <span class="input-group-addon">Last Name</span>
-                        <input type="text" class="form-control" ng-bind="lastName" placeholder="Last name">
-                      </div>
-                      <div class="input-group">
-                        <span class="input-group-addon">Gender</span>
-                        <input type="text" class="form-control" ng-bind="gender" placeholder="Gender">
-                        <span class="input-group-addon">Age</span>
-                        <input type="number" class="form-control" ng-bind="age" placeholder="Age">
-                      </div>
+  <div class="tab-content container">
+    <div class="tab-pane active" id="certificate"></div>
+    <div class="tab-pane" id="discharge"></div>
+    <div class="tab-pane" id="bill"></div>
 
-                      <div class="input-group">
-                        <span class="input-group-addon">Date Admitted</span>
-                        <input type="date" class="form-control">
-                        <span class="input-group-addon">Time</span>
-                        <input type="time" class="form-control">
-                      </div>
-                      <div class="input-group">
-                        <span class="input-group-addon">Date Operated</span>
-                        <input type="date" class="form-control">
-                        <span class="input-group-addon">Time</span>
-                        <input type="time" class="form-control">
-                      </div>
-                      <div class="input-group">
-                        <span class="input-group-addon">Date Discharged</span>
-                        <input type="date" class="form-control">
-                        <span class="input-group-addon">Time</span>
-                        <input type="time" class="form-control">
-                      </div>
-                    </div>
-                    <div class="col-md-1">
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div>
-                      <p>Diagnosis:</p>
-                      <textarea rows=2></textarea>
-                    </div>
-                    <div>
-                      <p>Treatment:</p>
-                      <textarea rows=5></textarea>
-                    </div>
-                    <div>
-                      <p>Advice at discharge:</p>
-                      <ul>
-                        <li>Rest and elevation of the operated/injured limb.</li>
-                        <li>Medicines
-                          <input type="text" class="sentenceInput" ng-model="prescribedMedicines"></input>
-                          as prescribed.</li>
-                        <li>Report to Dr. Desai for any fever, increase in pain, swelling, and discharge at operative site.</li>
-                        <li>
-                          Use <input type="text" class="sentenceInput" ng-model="reommendedSupport"></input> support at home.
-                        </li>
-                        <li>Continue exercises for <input type="text" class="sentenceInput" ng-model="exercisePeriod"> as taught.</li>
-                      </ul>
-                      <p>Review again after one week.</p>
-                      <br/><br/><br/>
-                      <div>
-                        <div class="col-md-6">
-                          Dated: <span></span>
-                        </div>
-                        <div class="col-md-6">
-                          Dr. K. Desai
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="tab-pane jumbotron active" id="certificate">
-                <div>
-                  <div>
-                    <h2>CERTIFICATE</h2>
-                  </div>
-                  <div>
-                    <div class="formSentence">
-                      This is to certify that
-                      <select id="namePrefix" class="sentenceInput" ng-model="namePrefix" ng-change="genderChange()">
-                        <option value="Mr.">Mr.</option>
-                        <option value="Mrs.">Mrs.</option>
-                        <option value="Ms.">Ms.</option>
-                      </select>
-                      <input type="text" class="sentenceInput" ng-model="firstName" placeholder="First Name">
-                      <input type="text" class="sentenceInput" ng-model="lastName" placeholder="Last Name">
-                    </div>
-                    <div class="formSentence">
-                      <select class="sentenceInput" ng-model="presentPast">
-                        <option value="is">is</option>
-                        <option value="was">was</option>
-                      </select>
-                      under treatment at this hospital for
-                      <input class="sentenceInput" ng-model="treatmentReason" placeholder="treatment reason">
-                    </div>
-                    <div class="formSentence">
-                      from
-                      <input type="date" class="sentenceInput" ng-model="admitDate">.
-                    </div>
-                    <div class="formSentence">
-                      <span ng-bind="genderPronoun"></span>
-                      was admitted to this hostpital on
-                      <input type="date" class="sentenceInput" ng-model="admitDate">
-                    </div>
-                    <div class="formSentence">
-                      and discharged on
-                      <input type="date" class="sentenceInput" ng-model="dischargeDate">.
-                    </div>
-                    <div class="formSentence">
-                      <span ng-bind="genderPronoun"></span>
-                      <span>{{presentPast}}</span>
-                      <select class="sentenceInput" ng-model="adviceOrExpectation">
-                        <option value="advice">advised to</option>
-                        <option value="expectation">expected to</option>
-                      </select>
-                      <select class="sentenceInput" ng-model="takeContinueRest">
-                        <option value="takeRest">take</option>
-                        <option value="continueRest">continue</option>
-                      </select>
-                      rest from
-                      <input type="date" class="sentenceInput" ng-model="restStartDate">
-                      to
-                      <input type="date" class="sentenceInput" ng-model="restEndDate">.
-                    </div>
-                    <div class="formSentence">
-                      <span ng-bind="genderPronoun"></span>
-                      <span>{{presentPast}}</span> advised to continue to resume
-                      <span ng-bind="genderPronounPossessive"></span>
-                      <select class="sentenceInput" ng-model="leaveFrom">
-                        <option value="ADL">ADL</option>
-                        <option value="duty">duty</option>
-                      </select> from
-                      <input type="date" class="sentenceInput" ng-model="resumeWorkDate">.
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <button type="button" class="btn btn-success btn-large" ng-click="generateCertificate()">Generate</button>
-                </div>
-              </div>
-              <div class="tab-pane jumbotron" id="bill">
-                <div>
-                  <div>
-                    <h2>Bill for treatment charges</h2>
-                    <table class="table" id="billTable">
-                      <thead>
-                        <tr><th>Procedure</th><th>Amount</th></tr>
-                      </thead>
-                      <tfoot>
-                        <tr><td><b>Total</b></td><td></td></tr>
-                        <tr><td>Advance payment</td><td><input type="text"></td></tr>
-                        <tr><td>Balance to be paid</td><td><input type="text"></td></tr>
-                      </tfoot>
-                      <tbody>
-                        <tr><td>Consultation</td><td><input type="text"></td></tr>
-                        <tr><td>Reconsultation</td><td><input type="text"></td></tr>
-                        <tr><td>Dressings, Inj-im/iv</td><td><input type="text"></td></tr>
-                        <tr><td>Catheter/blood infusion</td><td><input type="text"></td></tr>
-                        <tr><td>Plaster application</td><td><input type="text"></td></tr>
-                        <tr><td>Operation theater</td><td><input type="text"></td></tr>
-                        <tr><td>IITV usage</td><td><input type="text"></td></tr>
-                        <tr><td>Special equipment</td><td><input type="text"></td></tr>
-                        <tr><td>Room stay</td><td><input type="text"></td></tr>
-                        <tr><td>Nursing charges</td><td><input type="text"></td></tr>
-                        <tr><td>Surgical fees</td><td><input type="text"></td></tr>
-                        <tr><td>Ward visits</td><td><input type="text"></td></tr>
-                        <tr><td>Miscellaneous</td><td><input type="text"></td></tr>
-                        <tr><td>Radiology</td><td><input type="text"></td></tr>
-                        <tr><td>Pathology</td><td><input type="text"></td></tr>
-                        <tr><td>Implants</td><td><input type="text"></td></tr>
-                        <tr><td>Anesthesia</td><td><input type="text"></td></tr>
-                        <tr><td>Medicines and disposables</td><td><input type="text"></td></tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>
+    <div>
+      <button type="button" class="btn btn-success btn-large" ng-click="generateArtifact();">Generate</button>
     </div>
   </div>
 
