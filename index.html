@@ -2,43 +2,39 @@
 <html lang="en" ng-app="smruti">
 
 <head>
-  <title>Smruti</title>
+    <title>Smruti</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 
-  <!-- JavaScript -->
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="./script.js"></script>
+    <!-- JavaScript -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./script.js"></script>
 </head>
 
 <body ng-controller="smrutiController">
 
-  <nav class="navbar navbar-fixed-top navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">Smruti</a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#certificate" data-toggle="tab">Certificate</a></li>
-        <li><a href="#discharge" data-toggle="tab">Discharge</a></li>
-        <li><a href="#bill" data-toggle="tab">Bill</a></li>
-      </ul>
-    </div>
-  </nav>
+    <nav class="navbar navbar-fixed-top navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Smruti</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li ng-repeat="template in templates"><a ng-click="setTemplate(template.name);">{{template.name}}</a></li>
+                <!-- <li class="active"><a href="#certificate" data-toggle="tab">Certificate</a></li>
+                <li><a href="#discharge" data-toggle="tab">Discharge</a></li>
+                <li><a href="#bill" data-toggle="tab">Bill</a></li> -->
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a style="background: #33dd33; color: #000000" href="">Generate</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <div class="tab-content container">
-    <div class="tab-pane active" id="certificate"></div>
-    <div class="tab-pane" id="discharge"></div>
-    <div class="tab-pane" id="bill"></div>
-
-    <div>
-      <button type="button" class="btn btn-success btn-large" ng-click="generateArtifact();">Generate</button>
-    </div>
-  </div>
+    <div ng-include="template.url"></div>
 
 </body>
 

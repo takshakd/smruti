@@ -1,33 +1,153 @@
-<div class="container">
-  <h2>Bill for treatment charges</h2>
-  <table class="table" id="billTable">
-    <thead>
-      <tr><th>Procedure</th><th>Amount</th></tr>
-    </thead>
-    <tfoot>
-      <tr><td><b>Total</b></td><td></td></tr>
-      <tr><td>Advance payment</td><td><input type="text"></td></tr>
-      <tr><td>Balance to be paid</td><td><input type="text"></td></tr>
-    </tfoot>
-    <tbody>
-      <tr><td>Consultation</td><td><input type="text"></td></tr>
-      <tr><td>Reconsultation</td><td><input type="text"></td></tr>
-      <tr><td>Dressings, Inj-im/iv</td><td><input type="text"></td></tr>
-      <tr><td>Catheter/blood infusion</td><td><input type="text"></td></tr>
-      <tr><td>Plaster application</td><td><input type="text"></td></tr>
-      <tr><td>Operation theater</td><td><input type="text"></td></tr>
-      <tr><td>IITV usage</td><td><input type="text"></td></tr>
-      <tr><td>Special equipment</td><td><input type="text"></td></tr>
-      <tr><td>Room stay</td><td><input type="text"></td></tr>
-      <tr><td>Nursing charges</td><td><input type="text"></td></tr>
-      <tr><td>Surgical fees</td><td><input type="text"></td></tr>
-      <tr><td>Ward visits</td><td><input type="text"></td></tr>
-      <tr><td>Miscellaneous</td><td><input type="text"></td></tr>
-      <tr><td>Radiology</td><td><input type="text"></td></tr>
-      <tr><td>Pathology</td><td><input type="text"></td></tr>
-      <tr><td>Implants</td><td><input type="text"></td></tr>
-      <tr><td>Anesthesia</td><td><input type="text"></td></tr>
-      <tr><td>Medicines and disposables</td><td><input type="text"></td></tr>
-    </tbody>
-  </table>
-</div>
+<html>
+
+<head>
+  <script></script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Bill for treatment charges</h2>
+        <table class="table" id="billTable">
+            <thead>
+                <tr>
+                    <th>Procedure</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td><b>Total</b></td>
+                    <td ng-bind="billTotal"></td>
+                </tr>
+                <tr>
+                    <td>Advance payment</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Balance to be paid</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+            </tfoot>
+            <tbody>
+              <tr ng-repeat="x in billables">
+                <td>{{x.name}}</td>
+                <td><input type="text" ng-model="x.amount" ng-change="updateBillTotal();"></td>
+              </tr>
+                <!-- <tr>
+                    <td>Consultation</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Reconsultation</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Dressings, Inj-im/iv</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Catheter/blood infusion</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Plaster application</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Operation theater</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>IITV usage</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Special equipment</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Room stay</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nursing charges</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Surgical fees</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ward visits</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Miscellaneous</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Radiology</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Pathology</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Implants</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Anesthesia</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Medicines and disposables</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
