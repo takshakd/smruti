@@ -1,8 +1,6 @@
 <div class="container" id="dischargeSummary">
   <h2>Discharge Summary</h2>
   <div class="row">
-    <div class="col-md-1">
-    </div>
     <div class="col-md-9">
       <div class="input-group">
         <span class="input-group-addon">First Name</span>
@@ -36,20 +34,24 @@
         <input type="time" class="form-control">
       </div>
     </div>
-    <div class="col-md-1">
-    </div>
   </div>
 
   <div class="row">
-    <div class="col-md-9" style="text-align:center">
-      <p>Diagnosis:</p>
-      <textarea rows=2></textarea>
+    <div class="col-md-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">Diagnosis</div>
+        <div><textarea rows=2></textarea></div>
+      </div>
     </div>
-    <div>
-      <p>Treatment:</p>
-      <textarea rows=5></textarea>
+
+    <div class="col-md-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">Treatment</div>
+        <div><textarea rows=5></textarea></div>
+      </div>
     </div>
-    <div>
+
+    <div class="col-md-9">
       <p>Advice at discharge:</p>
       <ul>
         <li>Rest and elevation of the operated/injured limb.</li>

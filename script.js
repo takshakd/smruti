@@ -9,20 +9,29 @@
 var smruti = angular.module('smruti', []);
 
 smruti.controller('smrutiController', function($scope) {
-    $scope.templates = [
-      {name: "Certificate", url: "certificate.html"},
-      {name: "Bill", url: "bill.html"},
-      {name: "Discharge", url: "discharge.html"}
-    ];
-
-    $scope.setTemplate = function(name) {
-      for (var i = 0; i < $scope.templates.length; i++) {
-        if ($scope.templates[i].name === name) {
-          $scope.template = $scope.templates[i];
-          return;
-        }
+    // $scope.templates = [
+    //   {name: "Certificate", url: "certificate.html"},
+    //   {name: "Bill", url: "bill.html"},
+    //   {name: "Discharge", url: "discharge.html"}
+    // ];
+    $scope.templates = {
+      certificate: {
+        url: "certificate.html"
+      },
+      bill: {
+        url: "bill.html"
+      },
+      discharge: {
+        url: "discharge.html"
       }
     };
+
+    $scope.template = $scope.templates.certificate;
+
+    $scope.setTemplate = function(name) {
+      $scope.template = $scope.templates[name];
+    };
+
     $scope.selectedBillable = "";
 
     $scope.billables = [
@@ -54,8 +63,6 @@ smruti.controller('smrutiController', function($scope) {
       }
     };
 
-    $scope.setTemplate("Certificate");
-
     $scope.date = Date();
     $scope.namePrefix = "Mr.";
     $scope.genderPronoun = "he";
@@ -84,6 +91,10 @@ smruti.controller('smrutiController', function($scope) {
         }
     };
 
+    $scope.generate = function() {
+      console.log($scope.template);
+    };
+
     $scope.generateCertificate = function() {
         var printingWindow = window.open("", "_blank");
         //printingWindow.document.write("<p>" + $scope.date + "</p>");
@@ -97,7 +108,7 @@ smruti.controller('smrutiController', function($scope) {
         printingWindow.document.write("<p>Dr. K. Desai</p>");
         printingWindow.document.write("<p>(Regn. No. G-2683)</p>");
         printingWindow.document.write("</html>");
-    }
+    };
 });
 
 
