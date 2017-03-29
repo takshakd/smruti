@@ -13,15 +13,15 @@
 <body ng-controller="smrutiController">
   <div id="root">
     <div class="rootTitle">Smruti</div>
-    <div>
+    <div id="navOptions">
       <a class="actionLink" href="" ng-click="setTemplate('certificate')">Certificate</a>
       <a class="actionLink" href="" ng-click="setTemplate('bill')">Bill</a>
       <a class="actionLink" href="" ng-click="setTemplate('discharge')">Discharge</a>
     </div>
-    <div ng-include="template.url">
+    <div class="container" ng-include="template.url">
     </div>
     <div>
-      <div><a class="actionLink" href="" ng-click="generate()">Generate</a></div>
+      <div><a id="generateLink" class="actionLink" href="" ng-click="generate()">Generate</a></div>
     </div>
   </div>
 </body>

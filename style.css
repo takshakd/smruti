@@ -4,6 +4,11 @@
 
 .rootTitle {
   font-size: 3em;
+  margin: 10px;
+}
+
+#navOptions {
+    margin: 10px;
 }
 
 button {
@@ -15,16 +20,23 @@ button {
 }
 
 .container {
-  background-color: #ffffb3;
+  background-color: #dddddd;
+  margin: 10px;
   padding: 10px;
   width: 75%;
 }
 
 .actionLink {
-  background-color: #ffcc00;
-  color: #806600;
-  padding: 5px;
+  /*background-color: #555555;*/
+  color: #444444;
+  font-size: 1.25em;
+  padding: 10px;
   text-decoration: none;
+}
+
+.actionLink:hover {
+    color: #222222;
+    font-weight: bold;
 }
 
 .formSentence {
@@ -32,12 +44,18 @@ button {
 }
 
 .sentenceInput {
-  background-color: #e6e6ff;
+  background-color: #dddddd;
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: 1px solid #9999ff;
-  padding: 3px;
+  border-bottom: 3px solid #666666;/*#9999ff;*/
+  padding: 10px;
+}
+
+#generateLink {
+    /*border: 3px solid #111111;*/
+    color: #111111;
+    font-size: 1.5em;
 }
 
 .input-group {
