@@ -1,7 +1,3 @@
-/*body {
-  padding-top: 70px;
-}*/
-
 #root {
   font-family: Helvetica, sans-serif;
 }
@@ -19,9 +15,16 @@ button {
 }
 
 .container {
-  /*border: 1px solid black;
-  border-radius: 5px;*/
+  background-color: #ffffb3;
   padding: 10px;
+  width: 75%;
+}
+
+.actionLink {
+  background-color: #ffcc00;
+  color: #806600;
+  padding: 5px;
+  text-decoration: none;
 }
 
 .formSentence {
@@ -29,10 +32,12 @@ button {
 }
 
 .sentenceInput {
+  background-color: #e6e6ff;
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid #9999ff;
+  padding: 3px;
 }
 
 .input-group {

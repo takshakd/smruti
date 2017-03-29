@@ -14,14 +14,14 @@
   <div id="root">
     <div class="rootTitle">Smruti</div>
     <div>
-      <a href="" ng-click="setTemplate('certificate')">Certificate</a>
-      <a href="" ng-click="setTemplate('bill')">Bill</a>
-      <a href="" ng-click="setTemplate('discharge')">Discharge</a>
+      <a class="actionLink" href="" ng-click="setTemplate('certificate')">Certificate</a>
+      <a class="actionLink" href="" ng-click="setTemplate('bill')">Bill</a>
+      <a class="actionLink" href="" ng-click="setTemplate('discharge')">Discharge</a>
     </div>
     <div ng-include="template.url">
     </div>
     <div>
-      <div><a href="" ng-click="generate()">Generate</a></div>
+      <div><a class="actionLink" href="" ng-click="generate()">Generate</a></div>
     </div>
   </div>
 </body>
