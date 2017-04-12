@@ -92,7 +92,7 @@ smruti.controller('smrutiController', function($scope) {
     };
 
     $scope.generate = function() {
-      console.log($scope.template);
+      window.open("certificate.html", "_blank");
     };
 
     $scope.generateCertificate = function() {
