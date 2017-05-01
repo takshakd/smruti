@@ -16,13 +16,16 @@ smruti.controller('smrutiController', function($scope) {
     // ];
     $scope.templates = {
       certificate: {
-        url: "certificate.html"
+        url: "certificate.html",
+        genFcn: genCertificate
       },
       bill: {
-        url: "bill.html"
+        url: "bill.html",
+        genFcn: genBill
       },
       discharge: {
-        url: "discharge.html"
+        url: "discharge.html",
+        genFcn: genDischarge
       }
     };
 
@@ -92,10 +95,11 @@ smruti.controller('smrutiController', function($scope) {
     };
 
     $scope.generate = function() {
-      window.open("certificate.html", "_blank");
+      $scope.template.genFcn();
+      //window.open("certificate.html", "_blank");
     };
 
-    $scope.generateCertificate = function() {
+    function genCertificate() {
         var printingWindow = window.open("", "_blank");
         //printingWindow.document.write("<p>" + $scope.date + "</p>");
         printingWindow.document.write("<html><head><title>Certificate</title></head>");
@@ -108,7 +112,13 @@ smruti.controller('smrutiController', function($scope) {
         printingWindow.document.write("<p>Dr. K. Desai</p>");
         printingWindow.document.write("<p>(Regn. No. G-2683)</p>");
         printingWindow.document.write("</html>");
-    };
+    }
+
+    function genBill() {
+
+    }
+
+    function genDischarge() {}
 });
 
 
