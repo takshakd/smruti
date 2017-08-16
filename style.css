@@ -54,10 +54,19 @@ button {
   padding: 10px;
 }
 
-#generateLink {
-  color: #111111;
+#generateLinkContainer {
   font-size: 1.5em;
   margin: 10px;
+  padding: 10px;
+}
+
+#generateLink {
+  background-color: #28a745;
+  color: #ffffff;
+}
+
+#generateLink:hover {
+  background-color: darkgreen;
 }
 
 .input-group {

@@ -22,13 +22,13 @@
                 <tr>
                     <td>Advance payment</td>
                     <td>
-                        <input type="text">
+                        <input type="text" ng-model="billAdvance" ng-change="updateBillTotal();">
                     </td>
                 </tr>
                 <tr>
                     <td>Balance to be paid</td>
                     <td>
-                        <input type="text">
+                        {{billRemaining}}
                     </td>
                 </tr>
             </tfoot>
@@ -37,114 +37,6 @@
                 <td>{{x.name}}</td>
                 <td><input type="text" ng-model="x.amount" ng-change="updateBillTotal();"></td>
               </tr>
-                <!-- <tr>
-                    <td>Consultation</td>
-                    <td>
-                        <input type="text">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Reconsultation</td>
-                    <td>
-                        <input type="text">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Dressings, Inj-im/iv</td>
-                    <td>
-                        <input type="text">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Catheter/blood infusion</td>
-                    <td>
-                        <input type="text">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Plaster application</td>
-                    <td>
-                        <input type="text">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Operation theater</td>
-                    <td>
-                        <input type="text">
-                    </td>
-                </tr>
-                <tr>
-                    <td>IITV usage</td>
-                    <td>
-                        <input type="text">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Special equipment</td>
-                    <td>
-                        <input type="text">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Room stay</td>
-                    <td>
-                        <input type="text">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nursing charges</td>
-                    <td>
-                        <input type="text">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Surgical fees</td>
-                    <td>
-                        <input type="text">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Ward visits</td>
-                    <td>
-                        <input type="text">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Miscellaneous</td>
-                    <td>
-                        <input type="text">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Radiology</td>
-                    <td>
-                        <input type="text">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Pathology</td>
-                    <td>
-                        <input type="text">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Implants</td>
-                    <td>
-                        <input type="text">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Anesthesia</td>
-                    <td>
-                        <input type="text">
-                    </td>
-                </tr>
-                <tr>
-                    <td>Medicines and disposables</td>
-                    <td>
-                        <input type="text">
-                    </td>
-                </tr> -->
             </tbody>
         </table>
     </div>
