@@ -18,11 +18,10 @@
       <a class="actionLink" href="" ng-click="setTemplate('bill')">Bill</a>
       <a class="actionLink" href="" ng-click="setTemplate('discharge')">Discharge</a>
     </div>
-    <div class="container contentArea" ng-include="template.url"></div>
-    <div>
-      <div id="generateLinkContainer"><a id="generateLink" class="actionLink" href="" ng-click="generate()">Generate</a></div>
+    <div class="container contentArea">
+      <div ng-include="template.url"></div>
+      <div id="printButton" class="actionLink" ng-click="printArtifact()">Print</div>
     </div>
-    <div id="certOut" ng-include="templates.certificate.artifactTemplate"></div>
   </div>
 </body>
 

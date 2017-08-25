@@ -21,7 +21,7 @@
         <input type="date" class="sentenceInput" ng-model="admitDate">.
     </div>
     <div class="formSentence">
-        <span ng-bind="genderPronoun"></span> was admitted to this hostpital on
+        <span>{{genderPronoun}}</span> was admitted to this hostpital on
         <input type="date" class="sentenceInput" ng-model="admitDate">
         and discharged on
         <input type="date" class="sentenceInput" ng-model="dischargeDate">.
@@ -51,4 +51,16 @@
         </select> from
         <input type="date" class="sentenceInput" ng-model="resumeWorkDate">.
     </div>
+</div>
+
+<div class="artifactPreview container" id="certificateArtifact">
+  <h3 class="artifactTitle">Certificate</h3>
+  <div>This is to certify that {{namePrefix}} {{firstName}} {{lastName}} {{presentPast}} under treatment at this hospital for {{treatmentReason}}.</div>
+  <div>{{heSheUpper}} {{presentPast}} admitted to this hospital from {{admitDate}} and discahrged on {{dischargeDate}}.</div>
+  <div>{{heSheUpper}} {{presentPast}} advised to take rest from {{restStartDate}} to {{restEndDate}}.</div>
+  <div>{{heSheUpper}} {{presentPast}} advised to resume {{hisHerLower}} {{leaveFrom}} from {{resumeWorkDate}}.</div>
+  <div class="artifactSign">
+    <div class="signName">Dr. K. Desai</div>
+    <div class="signReg">(Regn. No. G-2683)</div>
+  </div>
 </div>

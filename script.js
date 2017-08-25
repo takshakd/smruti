@@ -60,6 +60,8 @@ smruti.controller('smrutiController', function($scope) {
 
   $scope.date = Date();
   $scope.namePrefix = "Mr.";
+  $scope.firstName = "";
+  $scope.lastName = "";
   $scope.genderPronoun = "he";
   $scope.heSheUpper = "He";
   $scope.heSheLower = "he";
@@ -88,6 +90,10 @@ smruti.controller('smrutiController', function($scope) {
 
   $scope.generate = function() {
     $scope.template.genFcn();
+  };
+
+  $scope.printArtifact = function() {
+    window.print();
   };
 
   function genCertificate() {
