@@ -86,9 +86,22 @@ textarea {
 
 .artifactPreview {
   background-color: #ffff8d;
-  padding: 5px;
-  padding-left: 10px;
+  font-family: "Cambria", "Times New Roman", serif;
+  border-radius: 15px;
+  margin-top: 20px;
+  padding: 20px;
   width: 75%;
+}
+
+.artifactTitle {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.artifactLine {
+  margin-top: 0.3em;
+  margin-bottom: 0.5em;
 }
 
 .artifactSign {
@@ -102,7 +115,7 @@ textarea {
   .artifactPreview {
     visibility: visible;
     position: absolute;
-    top: 0;
+    top: 100px;
     left: 0;
   }
 }
