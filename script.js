@@ -71,6 +71,7 @@ smruti.controller('smrutiController', function($scope) {
   $scope.genderPronounPossessive = "his";
   $scope.adviceOrExpectation = "advice";
   $scope.leaveFrom = "ADL";
+  $scope.resumeExpectation = "advised to";
 
   $scope.genderChange = function() {
     if ($scope.namePrefix === "Mr.") {

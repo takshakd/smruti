@@ -43,7 +43,11 @@
     </div>
     <div class="formSentence">
         <span ng-bind="genderPronoun"></span>
-        <span>{{presentPast}}</span> advised to continue to resume
+        <span>{{presentPast}}</span>
+        <select class="sentenceInput" ng-model="resumeExpectation">
+          <option value="advised to">advised to</option>
+          <option value="expected to">expected to</option>
+        </select> resume
         <span ng-bind="genderPronounPossessive"></span>
         <select class="sentenceInput" ng-model="leaveFrom">
             <option value="ADL">ADL</option>
@@ -58,7 +62,7 @@
   <div>This is to certify that {{namePrefix}} {{firstName}} {{lastName}} {{presentPast}} under treatment at this hospital for {{treatmentReason}}.</div>
   <div>{{heSheUpper}} {{presentPast}} admitted to this hospital from {{admitDate}} and discahrged on {{dischargeDate}}.</div>
   <div>{{heSheUpper}} {{presentPast}} advised to take rest from {{restStartDate}} to {{restEndDate}}.</div>
-  <div>{{heSheUpper}} {{presentPast}} advised to resume {{hisHerLower}} {{leaveFrom}} from {{resumeWorkDate}}.</div>
+  <div>{{heSheUpper}} {{presentPast}} {{resumeExpectation}} resume {{hisHerLower}} {{leaveFrom}} from {{resumeWorkDate}}.</div>
   <div class="artifactSign">
     <div class="signName">Dr. K. Desai</div>
     <div class="signReg">(Regn. No. G-2683)</div>
