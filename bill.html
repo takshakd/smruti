@@ -14,7 +14,7 @@
             <td><input type="text" ng-model="x.amount" ng-change="updateBillBalance();"></td>
           </tr>
           <tr>
-              <td class="billBalance">Total</td>
+              <td class="billBalance">Balance</td>
               <td ng-bind="billBalance"></td>
           </tr>
         </tbody>
@@ -22,5 +22,19 @@
   </div>
   <div class="artifactPreview">
     <div class="artifactTitle">Bill</div>
+    <table class="artifactTable">
+      <tr>
+        <th>Procedure</th>
+        <th>Amount</th>
+      </tr>
+      <tr ng-repeat="x in billables">
+        <td>{{x.name}}</td>
+        <td>{{x.amount}}</td>
+      </tr>
+      <tr class="billBalance">
+        <td>Balance</td>
+        <td>{{billBalance}}</td>
+      </tr>
+    </table>
   </div>
 </div>
