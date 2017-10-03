@@ -16,13 +16,6 @@
   border: 5px solid #777777;
 }
 
-/*button {
-  border: none;
-  color: #ffffff;
-  font-size: 1.25em;
-  padding: 10px;
-}*/
-
 .container {
   display: flex;
   flex-direction: column;
@@ -90,7 +83,6 @@ textarea {
   border-radius: 15px;
   margin-top: 20px;
   padding: 20px;
-  width: 75%;
 }
 
 .artifactTitle {
@@ -106,6 +98,10 @@ textarea {
 
 .artifactSign {
   margin-top: 70px;
+}
+
+.billBalance {
+  font-weight: bold;
 }
 
 @media print {

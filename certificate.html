@@ -1,70 +1,68 @@
 <div class="container">
+  <div>
     <h2>CERTIFICATE</h2>
     <div class="formSentence">
-        This is to certify that
-        <select id="namePrefix" class="sentenceInput" ng-model="namePrefix" ng-change="genderChange()">
+      This is to certify that
+      <select id="namePrefix" class="sentenceInput" ng-model="namePrefix" ng-change="genderChange()">
             <option value="Mr.">Mr.</option>
             <option value="Mrs.">Mrs.</option>
             <option value="Ms.">Ms.</option>
         </select>
-        <input type="text" class="sentenceInput" ng-model="firstName" placeholder="First Name">
-        <input type="text" class="sentenceInput" ng-model="lastName" placeholder="Last Name">
+      <input type="text" class="sentenceInput" ng-model="firstName" placeholder="First Name">
+      <input type="text" class="sentenceInput" ng-model="lastName" placeholder="Last Name">
     </div>
     <div class="formSentence">
-        <select class="sentenceInput" ng-model="presentPast">
+      <select class="sentenceInput" ng-model="presentPast">
             <option value="is">is</option>
             <option value="was">was</option>
-        </select>
-        under treatment at this hospital for
-        <input class="sentenceInput" ng-model="treatmentReason" placeholder="treatment reason">
-        from
-        <input type="date" class="sentenceInput" ng-model="admitDate">.
+        </select> under treatment at this hospital for
+      <input class="sentenceInput" ng-model="treatmentReason" placeholder="treatment reason"> from
+      <input type="date" class="sentenceInput" ng-model="admitDate">.
     </div>
     <div class="formSentence">
-        <span>{{genderPronoun}}</span> was admitted to this hostpital on
-        <input type="date" class="sentenceInput" ng-model="admitDate">
-        and discharged on
-        <input type="date" class="sentenceInput" ng-model="dischargeDate">.
+      <span>{{genderPronoun}}</span> was admitted to this hostpital on
+      <input type="date" class="sentenceInput" ng-model="admitDate"> and discharged on
+      <input type="date" class="sentenceInput" ng-model="dischargeDate">.
     </div>
     <div class="formSentence">
-        <span ng-bind="genderPronoun"></span>
-        <span>{{presentPast}}</span>
-        <select class="sentenceInput" ng-model="adviceOrExpectation">
+      <span ng-bind="genderPronoun"></span>
+      <span>{{presentPast}}</span>
+      <select class="sentenceInput" ng-model="adviceOrExpectation">
             <option value="advice">advised to</option>
             <option value="expectation">expected to</option>
         </select>
-        <select class="sentenceInput" ng-model="takeContinueRest">
+      <select class="sentenceInput" ng-model="takeContinueRest">
             <option value="takeRest">take</option>
             <option value="continueRest">continue</option>
-        </select>
-        rest from
-        <input type="date" class="sentenceInput" ng-model="restStartDate"> to
-        <input type="date" class="sentenceInput" ng-model="restEndDate">.
+        </select> rest from
+      <input type="date" class="sentenceInput" ng-model="restStartDate"> to
+      <input type="date" class="sentenceInput" ng-model="restEndDate">.
     </div>
     <div class="formSentence">
-        <span ng-bind="genderPronoun"></span>
-        <span>{{presentPast}}</span>
-        <select class="sentenceInput" ng-model="resumeExpectation">
+      <span ng-bind="genderPronoun"></span>
+      <span>{{presentPast}}</span>
+      <select class="sentenceInput" ng-model="resumeExpectation">
           <option value="advised to">advised to</option>
           <option value="expected to">expected to</option>
         </select> resume
-        <span ng-bind="genderPronounPossessive"></span>
-        <select class="sentenceInput" ng-model="leaveFrom">
+      <span ng-bind="genderPronounPossessive"></span>
+      <select class="sentenceInput" ng-model="leaveFrom">
             <option value="ADL">ADL</option>
             <option value="duty">duty</option>
         </select> from
-        <input type="date" class="sentenceInput" ng-model="resumeWorkDate">.
+      <input type="date" class="sentenceInput" ng-model="resumeWorkDate">.
     </div>
-</div>
+  </div>
 
-<div class="artifactPreview container" id="certificateArtifact">
-  <div class="artifactTitle">Certificate</div>
-  <div class="artifactLine">This is to certify that {{namePrefix}} {{firstName}} {{lastName}} {{presentPast}} under treatment at this hospital for {{treatmentReason}}.</div>
-  <div class="artifactLine">{{heSheUpper}} {{presentPast}} admitted to this hospital from {{admitDate}} and discahrged on {{dischargeDate}}.</div>
-  <div class="artifactLine">{{heSheUpper}} {{presentPast}} advised to take rest from {{restStartDate}} to {{restEndDate}}.</div>
-  <div class="artifactLine">{{heSheUpper}} {{presentPast}} {{resumeExpectation}} resume {{hisHerLower}} {{leaveFrom}} from {{resumeWorkDate}}.</div>
-  <div class="artifactSign">
-    <div class="signName">Dr. K. Desai</div>
-    <div class="signReg">(Regn. No. G-2683)</div>
+  <div class="artifactPreview" id="certificateArtifact">
+    <div class="artifactTitle">Certificate</div>
+    <div class="artifactLine">This is to certify that {{namePrefix}} {{firstName}} {{lastName}} {{presentPast}} under treatment at this hospital for {{treatmentReason}}.</div>
+    <div class="artifactLine">{{heSheUpper}} {{presentPast}} admitted to this hospital from {{admitDate}} and discahrged on {{dischargeDate}}.</div>
+    <div class="artifactLine">{{heSheUpper}} {{presentPast}} advised to take rest from {{restStartDate}} to {{restEndDate}}.</div>
+    <div class="artifactLine">{{heSheUpper}} {{presentPast}} {{resumeExpectation}} resume {{hisHerLower}} {{leaveFrom}} from {{resumeWorkDate}}.</div>
+    <div class="artifactSign">
+      <div class="signName">Dr. K. Desai</div>
+      <div class="signReg">(Regn. No. G-2683)</div>
+    </div>
   </div>
 </div>

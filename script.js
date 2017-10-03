@@ -43,19 +43,22 @@ smruti.controller('smrutiController', function($scope) {
     {name: "Pathology", amount: 0},
     {name: "Implants", amount: 0},
     {name: "Anesthesia", amount: 0},
-    {name: "Medicines and disposables", amount: 0}
+    {name: "Medicines and disposables", amount: 0},
+    {name: "Advance", amount: 0}
   ];
 
-  $scope.billTotal = 0;
+  $scope.billBalance = 0;
   $scope.billRemaining = 0;
-  $scope.billAdvance = 0;
-  $scope.updateBillTotal = function() {
-    $scope.billTotal = 0;
-    $scope.billables.forEach(function(b) {
-      $scope.billTotal += parseInt(b.amount);
+
+  $scope.updateBillBalance = function() {
+    function isAdvance(x) { return x.name === "Advance"; }
+    $scope.billBalance = 0;
+    $scope.billables.filter(x => !isAdvance(x)).forEach(function(b) {
+      $scope.billBalance += parseInt(b.amount);
     });
-    console.log($scope.billAdvance);
-    $scope.billRemaining = $scope.billTotal - parseInt($scope.billAdvance);
+    $scope.billables.filter(isAdvance).forEach(function(b) {
+      $scope.billBalance -= parseInt(b.amount);
+    });
   };
 
   $scope.date = Date();
@@ -140,9 +143,3 @@ var dischargeDate = $("input-date-disc");
 
 // Outputs
 var outputElementSelector = "#section-output > h2";
-
-$(document).ready(function() {
-  //$("#certificate").load("certificate.html");
-  //$("#discharge").load("./discharge.html");
-  //$("#bill").load("./bill.html");
-});
