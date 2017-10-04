@@ -1,23 +1,31 @@
 <div class="container">
   <div>
     <h2>Bill for treatment charges</h2>
-    <table class="table" id="billTable">
-        <thead>
-            <tr>
-                <th>Procedure</th>
-                <th>Amount</th>
-            </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="x in billables">
-            <td>{{x.name}}</td>
-            <td><input type="text" ng-model="x.amount" ng-change="updateBillBalance();"></td>
-          </tr>
-          <tr>
-              <td class="billBalance">Balance</td>
-              <td ng-bind="billBalance"></td>
-          </tr>
-        </tbody>
+    <table>
+      <thead>
+        <tr>
+          <th>Procedure</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="x in bill.billables">
+          <td>{{x.name}}</td>
+          <td><input type="text" class="billAmt" ng-model="x.amount" ng-change="updateBill()"></td>
+        </tr>
+        <tr>
+          <td class="billTotal">Total</td>
+          <td class="billAmt" ng-bind="bill.total"></td>
+        </tr>
+        <tr class="billAdvance">
+          <td>Advance paid</td>
+          <td><input type="text" class="billAmt" ng-model="bill.advance" ng-change="updateBill()"></td>
+        </tr>
+        <tr class="billBalance">
+          <td>Balance</td>
+          <td class="billAmt" ng-bind="bill.balance"></td>
+        </tr>
+      </tbody>
     </table>
   </div>
   <div class="artifactPreview">
@@ -27,13 +35,21 @@
         <th>Procedure</th>
         <th>Amount</th>
       </tr>
-      <tr ng-repeat="x in billables">
+      <tr ng-repeat="x in bill.billables">
         <td>{{x.name}}</td>
-        <td>{{x.amount}}</td>
+        <td class="billAmt">{{x.amount}}</td>
+      </tr>
+      <tr class="billTotal">
+        <td>Total</td>
+        <td class="billAmt">{{bill.total}}</td>
+      </tr>
+      <tr class="billAdvance">
+        <td>Advance paid</td>
+        <td class="billAmt">{{bill.advance}}</td>
       </tr>
       <tr class="billBalance">
         <td>Balance</td>
-        <td>{{billBalance}}</td>
+        <td class="billAmt">{{bill.balance}}</td>
       </tr>
     </table>
   </div>

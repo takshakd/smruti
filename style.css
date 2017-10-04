@@ -104,10 +104,19 @@ textarea {
   padding-left: 10px;
 }
 
-.billBalance {
+.billTotal {
   font-weight: bold;
 }
-
+.billAdvance {
+  font-style: italic;
+}
+.billBalance {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.billAmt {
+  text-align: right;
+}
 @media print {
   body {
     visibility: hidden;
