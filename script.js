@@ -2,6 +2,9 @@ var smruti = angular.module('smruti', []);
 
 smruti.controller('smrutiController', function($scope) {
   $scope.templates = {
+    letterhead: {
+      url: "letterhead.html"
+    },
     certificate: {
       url: "certificate.html"
     },
@@ -20,25 +23,78 @@ smruti.controller('smrutiController', function($scope) {
   };
 
   $scope.bill = {
-    billables: [
-      {name: "Consultation", amount: 0},
-      {name: "Reconsultation", amount: 0},
-      {name: "Dressings, Inj-IM/IV", amount: 0},
-      {name: "Catheter/Blood infusion", amount: 0},
-      {name: "Plaster application", amount: 0},
-      {name: "Operation theater", amount: 0},
-      {name: "IITV usage", amount: 0},
-      {name: "Specialist equipment", amount: 0},
-      {name: "Room stay", amount: 0},
-      {name: "Nursing charges", amount: 0},
-      {name: "Surguical fees", amount: 0},
-      {name: "Ward visits", amount: 0},
-      {name: "Miscellaneous", amount: 0},
-      {name: "Radiology", amount: 0},
-      {name: "Pathology", amount: 0},
-      {name: "Implants", amount: 0},
-      {name: "Anesthesia", amount: 0},
-      {name: "Medicines and disposables", amount: 0}
+    billables: [{
+        name: "Consultation",
+        amount: 0
+      },
+      {
+        name: "Reconsultation",
+        amount: 0
+      },
+      {
+        name: "Dressings, Inj-IM/IV",
+        amount: 0
+      },
+      {
+        name: "Catheter/Blood infusion",
+        amount: 0
+      },
+      {
+        name: "Plaster application",
+        amount: 0
+      },
+      {
+        name: "Operation theater",
+        amount: 0
+      },
+      {
+        name: "IITV usage",
+        amount: 0
+      },
+      {
+        name: "Specialist equipment",
+        amount: 0
+      },
+      {
+        name: "Room stay",
+        amount: 0
+      },
+      {
+        name: "Nursing charges",
+        amount: 0
+      },
+      {
+        name: "Surguical fees",
+        amount: 0
+      },
+      {
+        name: "Ward visits",
+        amount: 0
+      },
+      {
+        name: "Miscellaneous",
+        amount: 0
+      },
+      {
+        name: "Radiology",
+        amount: 0
+      },
+      {
+        name: "Pathology",
+        amount: 0
+      },
+      {
+        name: "Implants",
+        amount: 0
+      },
+      {
+        name: "Anesthesia",
+        amount: 0
+      },
+      {
+        name: "Medicines and disposables",
+        amount: 0
+      }
     ],
     advance: 0,
     total: 0,

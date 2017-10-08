@@ -1,6 +1,10 @@
+body {
+  margin: 0;
+}
+
 #root {
   text-align: center;
-  font-family: Helvetica, sans-serif;
+  font-family: "Helvetica", "Arial", sans-serif;
 }
 
 .rootTitle {
@@ -45,7 +49,7 @@
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: 3px solid #666666;/*#9999ff;*/
+  border-bottom: 3px solid #666666;
   padding: 10px;
 }
 
@@ -69,9 +73,6 @@
   padding: 5px;
 }
 
-.nav .active {
-}
-
 textarea {
   width: 100%;
   height: 100%;
@@ -88,7 +89,8 @@ textarea {
 .artifactTitle {
   font-size: 1.5em;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 .artifactLine {
@@ -107,23 +109,79 @@ textarea {
 .billTotal {
   font-weight: bold;
 }
+
 .billAdvance {
   font-style: italic;
 }
+
 .billBalance {
   font-size: 1.2em;
   font-weight: bold;
 }
+
 .billAmt {
   text-align: right;
 }
+
+.banner {
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: linear-gradient(to right, #efefef, #ffffff, #ffffff, #ffffff, #efefef);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brandName {
+  font-size: 2.4em;
+  padding: 5px;
+}
+
+.brandDesc {
+  padding: 5px;
+}
+
+.selfIntro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.selfIntroName, .selfIntroDesc {
+  padding: 2px;
+}
+
+.selfIntroName {
+  font-size: 1.2em;
+}
+
+.selfIntroDesc {
+  font-size: 0.8em;
+}
+
 @media print {
   body {
     visibility: hidden;
   }
+  .banner {
+    visibility: visible;
+  }
   .artifactPreview {
     visibility: visible;
+    font-family: "Times New Roman", serif;
+    background-color: #ffffff;
     position: absolute;
+    margin: 20px;
+    margin-left: 50px;
     top: 100px;
     left: 0;
   }

@@ -1,37 +1,39 @@
-<div class="container" id="dischargeSummary">
-  <h2>Discharge Summary</h2>
-  <div class="row">
-    <div class="col-md-9">
-      <div class="input-group">
-        <span class="input-group-addon">First Name</span>
-        <input type="text" class="form-control" ng-bind="firstName" placeholder="First name">
-        <span class="input-group-addon">Last Name</span>
-        <input type="text" class="form-control" ng-bind="lastName" placeholder="Last name">
-      </div>
-      <div class="input-group">
-        <span class="input-group-addon">Gender</span>
-        <input type="text" class="form-control" ng-bind="gender" placeholder="Gender">
-        <span class="input-group-addon">Age</span>
-        <input type="number" class="form-control" ng-bind="age" placeholder="Age">
-      </div>
+<div class="container">
+  <div>
+    <h2>Discharge Summary</h2>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="input-group">
+          <span class="input-group-addon">First Name</span>
+          <input type="text" class="form-control" ng-bind="firstName" placeholder="First name">
+          <span class="input-group-addon">Last Name</span>
+          <input type="text" class="form-control" ng-bind="lastName" placeholder="Last name">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Gender</span>
+          <input type="text" class="form-control" ng-bind="gender" placeholder="Gender">
+          <span class="input-group-addon">Age</span>
+          <input type="number" class="form-control" ng-bind="age" placeholder="Age">
+        </div>
 
-      <div class="input-group">
-        <span class="input-group-addon">Date Admitted</span>
-        <input type="date" class="form-control">
-        <span class="input-group-addon">Time</span>
-        <input type="time" class="form-control">
-      </div>
-      <div class="input-group">
-        <span class="input-group-addon">Date Operated</span>
-        <input type="date" class="form-control">
-        <span class="input-group-addon">Time</span>
-        <input type="time" class="form-control">
-      </div>
-      <div class="input-group">
-        <span class="input-group-addon">Date Discharged</span>
-        <input type="date" class="form-control">
-        <span class="input-group-addon">Time</span>
-        <input type="time" class="form-control">
+        <div class="input-group">
+          <span class="input-group-addon">Date Admitted</span>
+          <input type="date" class="form-control">
+          <span class="input-group-addon">Time</span>
+          <input type="time" class="form-control">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Date Operated</span>
+          <input type="date" class="form-control">
+          <span class="input-group-addon">Time</span>
+          <input type="time" class="form-control">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Date Discharged</span>
+          <input type="date" class="form-control">
+          <span class="input-group-addon">Time</span>
+          <input type="time" class="form-control">
+        </div>
       </div>
     </div>
   </div>
@@ -40,14 +42,14 @@
     <div class="col-md-9">
       <div class="panel panel-default">
         <div class="panel-heading">Diagnosis</div>
-        <div><textarea rows=2></textarea></div>
+        <div><textarea rows="2"></textarea></div>
       </div>
     </div>
 
     <div class="col-md-9">
       <div class="panel panel-default">
         <div class="panel-heading">Treatment</div>
-        <div><textarea rows=5></textarea></div>
+        <div><textarea rows="5"></textarea></div>
       </div>
     </div>
 
@@ -56,11 +58,11 @@
       <ul>
         <li>Rest and elevation of the operated/injured limb.</li>
         <li>Medicines
-          <input type="text" class="sentenceInput" ng-model="prescribedMedicines"></input>
+          <input type="text" class="sentenceInput" ng-model="prescribedMedicines">
           as prescribed.</li>
         <li>Report to Dr. Desai for any fever, increase in pain, swelling, and discharge at operative site.</li>
         <li>
-          Use <input type="text" class="sentenceInput" ng-model="reommendedSupport"></input> support at home.
+          Use <input type="text" class="sentenceInput" ng-model="reommendedSupport"> support at home.
         </li>
         <li>Continue exercises for <input type="text" class="sentenceInput" ng-model="exercisePeriod"> as taught.</li>
       </ul>
